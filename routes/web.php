@@ -25,17 +25,18 @@ Route::get('/dir/test', function(){
     return '<h1>This is the test page on URL->/dir/test</h1>';
 });
 
-Route::get('/user/{name}', function($name){
-    return "Your name is $name";
-});
+Route::get('/user/{id}', function($id){
+    return "Your ID is $id";
+})->where('id', '[0-9]+');
 
 Route::get('/{surname}/{name}', function($surname, $name){
-    if ($surname!='city') {
-        return "Your name is $surname $name";}
-    else
-    {
-        $name="Tashkent";
-        return "Cityname is: $name";
+
+    switch ($surname) {
+        case "city":
+            return "Cityname is: $name";
+            break;
+        default:
+            return "Your name is $surname $name";
     }
 });
 
