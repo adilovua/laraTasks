@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::prefix('user')->group(function () {
     Route::get('/', [UserController::class, 'show']);
     Route::get('/all', [UserController::class, 'all']);
+    Route::get('/{user}', [UserController::class, 'ShowCity']);
     Route::get('/{surname}/{name}', [UserController::class, 'show']);
 });
 
