@@ -37,6 +37,27 @@ Route::get('/user/{id}/{name}', function ($id, $name){
     return "Hey $name! Your ID id $id";
 })->where('id', '[0-9]+')->where('name', '[a-z][a-z]');
 
+
+Route::prefix('admin')->group(function (){
+       Route::get('/post/all', function () {
+            return 'all';
+        });
+        Route::get('/post/{id}', function ($id) {
+            return $id;
+        });
+
+        Route::get('/users', function () {
+            return 'all';
+        });
+        Route::get('/user/{id}', function ($id) {
+            return $id;
+        });
+});
+
+Route::get('/user/profile', function ($id) {
+    return 'profile';
+})->name('userProfile');
+
 /**
  * Сделайте маршрут вида /posts/:date,
  * где вместо :date должна быть дата в формате год-месяц-день.
