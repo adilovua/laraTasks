@@ -32,4 +32,12 @@ class UserController extends Controller
             return "$user i don`t know where are you from";
         }
     }
+
+    public function TestView(){
+        return view('test',
+            [
+                'surname' => 'Adilov',
+                'name' => 'Umid'
+            ]);
+    }
 }

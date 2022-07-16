@@ -27,9 +27,7 @@ Route::prefix('user')->group(function () {
 });
 
 
-Route::get('/test', function(){
-    return '<h1>This is the test page</h1>';
-});
+Route::get('/test', [UserController::class, 'TestView']);
 
 Route::get('/dir/test', function(){
     return '<h1>This is the test page on URL->/dir/test</h1>';
