@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/user', [UserController::class, 'show']);
+Route::get('/user/all', [UserController::class, 'all']);
 
 Route::get('/test', function(){
     return '<h1>This is the test page</h1>';
