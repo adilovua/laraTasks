@@ -19,8 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/user', [UserController::class, 'show']);
-Route::get('/user/all', [UserController::class, 'all']);
+Route::prefix('user')->group(function () {
+    Route::get('/', [UserController::class, 'show']);
+    Route::get('/all', [UserController::class, 'all']);
+    Route::get('/{surname}/{name}', [UserController::class, 'show']);
+});
+
 
 Route::get('/test', function(){
     return '<h1>This is the test page</h1>';
