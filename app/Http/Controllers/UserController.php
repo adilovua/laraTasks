@@ -34,7 +34,7 @@ class UserController extends Controller
     }
 
     public function TestView(){
-        return view('test',
+        return view('myviews.test',
             [
                 'surname' => 'Adilov',
                 'name' => 'Umid'
