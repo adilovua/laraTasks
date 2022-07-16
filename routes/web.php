@@ -30,7 +30,6 @@ Route::get('/user/{id}', function($id){
 })->where('id', '[0-9]+');
 
 Route::get('/{surname}/{name}', function($surname, $name){
-
     switch ($surname) {
         case "city":
             return "Cityname is: $name";
