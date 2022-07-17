@@ -51,13 +51,19 @@ class UserController extends Controller
         $salary = '1000 US dollars';
         $style = 'color:red;';
         $style_class = '.greenColor{color:green;}';
+        $href = '/user/Umid/Adilov';
+        $text = 'Open user page';
+
         return view('myviews.test',
             [
                 'name' => $name,
                 'age' => $age,
                 'salary' => $salary,
                 'title' => 'Test page',
-                'style' => $style
+                'style' => $style,
+                'styleClass' => $style_class,
+                'href' => $href,
+                'text' => $text
             ]);
     }
 }
