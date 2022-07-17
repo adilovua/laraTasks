@@ -27,6 +27,8 @@ class UserController extends Controller
     {
         return 'Hello everyone';
     }
+
+
     public function ShowCity($user){
         $users=[
             'Umid'=>'Tashkent',
@@ -44,10 +46,15 @@ class UserController extends Controller
     }
 
     public function TestView(){
+        $name = 'Umid';
+        $age = 43;
+        $salary = '1000 US dollars';
         return view('myviews.test',
             [
-                'surname' => 'Adilov',
-                'name' => 'Umid'
+                'name' => $name,
+                'age' => $age,
+                'salary' => $salary,
+                'title' => 'Test page'
             ]);
     }
 }
