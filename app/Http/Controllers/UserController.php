@@ -49,12 +49,14 @@ class UserController extends Controller
         $name = 'Umid';
         $age = 43;
         $salary = '1000 US dollars';
+        $style = 'color:red;';
         return view('myviews.test',
             [
                 'name' => $name,
                 'age' => $age,
                 'salary' => $salary,
-                'title' => 'Test page'
+                'title' => 'Test page',
+                'style' => $style
             ]);
     }
 }
