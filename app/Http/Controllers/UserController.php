@@ -50,6 +50,7 @@ class UserController extends Controller
         $age = 43;
         $salary = '1000 US dollars';
         $style = 'color:red;';
+        $style_class = '.greenColor{color:green;}';
         return view('myviews.test',
             [
                 'name' => $name,
