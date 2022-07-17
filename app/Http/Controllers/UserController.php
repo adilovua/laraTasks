@@ -46,6 +46,7 @@ class UserController extends Controller
     }
 
     public function TestView(){
+
         $name = 'Umid';
         $age = 43;
         $salary = '1000 US dollars';
@@ -54,16 +55,19 @@ class UserController extends Controller
         $href = '/user/Umid/Adilov';
         $text = 'Open user page';
 
+        $person = ['name'=>$name, 'age'=>$age, 'salary'=>$salary];
+
         return view('myviews.test',
             [
                 'name' => $name,
-                'age' => $age,
+                'age' => "<b> $age </b>",
                 'salary' => $salary,
                 'title' => 'Test page',
                 'style' => $style,
                 'styleClass' => $style_class,
                 'href' => $href,
-                'text' => $text
+                'text' => $text,
+                'person' => $person
             ]);
     }
 }
