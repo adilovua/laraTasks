@@ -8,11 +8,21 @@ class UserController extends Controller
 {
     public function show($surname=null, $name=null)
     {
+        $title = 'Greetings page';
         if (isset($surname) and isset($name)){
-            return "Hello $surname $name";
+            return view('myviews.show',
+            [
+               'surname' => $surname,
+               'name' => $name,
+               'title' => $title
+            ]);
         }
-        return 'Hello world';
+        return view('myviews.show',
+        [
+            'title' => $title
+        ]);
     }
+
     public function all()
     {
         return 'Hello everyone';
