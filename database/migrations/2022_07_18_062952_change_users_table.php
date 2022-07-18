@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         schema::table('users', function (Blueprint $table) {
-            $table->renameColumn('name', 'first_name');
-            $table->renameColumn('surname', 'second_name');
+            $table->string('email')->comment('This is your e-mail')->change();
+            $table->addColumn('integer','salary')->default(0);
+            $table->addColumn('integer','age')->nullable()->unsigned();
         });
     }
 
@@ -27,8 +28,6 @@ return new class extends Migration
     public function down()
     {
         schema::table('users', function(Blueprint $table){
-            $table->renameColumn('first_name', 'name');
-            $table->renameColumn('second_name', 'surname');
         });
     }
 };
