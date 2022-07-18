@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         schema::table('users', function (Blueprint $table) {
-            $table->string('region');
-            $table->text('address');
+            $table->renameColumn('name', 'first_name');
+            $table->renameColumn('surname', 'second_name');
         });
     }
 
@@ -27,9 +27,8 @@ return new class extends Migration
     public function down()
     {
         schema::table('users', function(Blueprint $table){
-            $table->dropColumn('region');
-            $table->dropColumn('address');
-            $table->string('name', 100)->change();
+            $table->renameColumn('first_name', 'name');
+            $table->renameColumn('second_name', 'surname');
         });
     }
 };
