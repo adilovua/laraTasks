@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,6 @@ Route::get('/user/{id}/{name}', function ($id, $name){
  * где вместо :date должна быть дата в формате год-месяц-день.
  */
 
-Route::get('/post/{date}', function($date){
-    return "Date is $date";
-})->where('date', '(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2020)\b');
+Route::get('/post/', [PostController::class, 'show']);
 
 
