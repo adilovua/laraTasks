@@ -3,7 +3,7 @@
 		<p style="{{ $style }}"> {{ $name }} </p>
 		<p> {!! $age !!}  years old. </p>
 		<p> His salary is {{ $salary }}. </p>
-{{--This os comment--}}
+		{{--This is comment--}}
 		<p><input type="text" value="{{ $name }}"/></p>
 		<p><input type="text" value="{{ $age }}"/></p>
 		<p><input type="text" value="{{ $salary }}"/></p>

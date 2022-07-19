@@ -5,10 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Database\Seeders\UsersSeeder;
 
 
-class DatabaseSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -23,9 +22,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         //
-        $this->call([
-                UsersSeeder::Class
-            ]
-        );
+        DB::table('users')->insert([
+            'name' => 'Michael',
+            'surname' => 'Jackson',
+            'birthday' => date('Y-m-d', strtotime('01.01.1969')),
+            'email' => 'test1@tes.st',
+            'password' => '1',
+            'salary' => 5000,
+            'age' => 53
+        ]);
     }
 }
