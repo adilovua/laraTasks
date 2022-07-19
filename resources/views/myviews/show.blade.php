@@ -1,10 +1,13 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot>
 
-    @if(isset($surname) and isset($name))
-        Hello {{$surname}} {{$name}}
-    @else
-        Hello world!!!
-    @endif
+    @foreach($users as $user)
+            <p>
+                {{ $user->name }} {{    $user->surname }}
+            </p>
+            <p>
+                {{ $user->email }}
+            </p>
+    @endforeach
 
 </x-layout>

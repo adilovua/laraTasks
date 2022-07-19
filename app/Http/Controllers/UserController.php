@@ -3,24 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function show($surname=null, $name=null)
+    public function show()
     {
-        $title = 'Greetings page';
-        if (isset($surname) and isset($name)){
-            return view('myviews.show',
-            [
-               'surname' => $surname,
-               'name' => $name,
-               'title' => $title
-            ]);
-        }
-        return view('myviews.show',
-        [
-            'title' => $title
+        $users=DB::table('users')->get();
+        return view('myviews.show', [
+            'users'=> $users,
+            'title' => 'Users Page'
         ]);
+        //dump($users);
     }
 
     public function all()
