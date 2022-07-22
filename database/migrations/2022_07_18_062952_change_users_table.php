@@ -14,9 +14,6 @@ return new class extends Migration
     public function up()
     {
         schema::table('users', function (Blueprint $table) {
-            $table->string('email')->comment('This is your e-mail')->change();
-            $table->addColumn('integer','salary')->default(0);
-            $table->addColumn('integer','age')->nullable()->unsigned();
         });
     }
 

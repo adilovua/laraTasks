@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class UsersSeeder extends Seeder
+class ProfilesSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -22,9 +22,12 @@ class UsersSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         //
-        DB::table('users')->insert([
-            'login' => 'Michael',
+        DB::table('profiles')->insert([
+            'name' => 'Michael',
+            'surname' => 'Jackson',
+            'email' => 'test1@tes.st',
             'password' => '1',
+            'user_id' => 1
         ]);
     }
 }

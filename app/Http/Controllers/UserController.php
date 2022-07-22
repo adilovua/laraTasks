@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function show()
     {
-        $users=DB::table('users')->get();
+        $users=User::all();
+        dump($users);
         return view('myviews.show', [
             'users'=> $users,
             'title' => 'Users Page'

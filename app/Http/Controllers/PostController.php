@@ -10,12 +10,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        DB::enableQueryLog();
-        DB::table('posts')->where('id', '<', 5)->get()->dump();
-        dump(DB::getQueryLog());
-
-        $query = DB::table('posts')->where('id', '<', 5)->toSql();
-        dump($query);
-
+        $posts = Post::all();
+        foreach ($posts as $post) {
+            dump($post->title);
+            dump($post->body);
+        }
     }
 }
