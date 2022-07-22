@@ -5,17 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Profile;
 
 class UserController extends Controller
 {
     public function show()
     {
-        $users=User::all();
+        $users=User::find(1);
         dump($users);
-        return view('myviews.show', [
+        dump($users->profile);
+        $profiles=Profile::find(1);
+        dump($profiles->user);
+/*        return view('myviews.show', [
             'users'=> $users,
             'title' => 'Users Page'
-        ]);
+        ]);*/
         //dump($users);
     }
 
