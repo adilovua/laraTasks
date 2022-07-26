@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::prefix('user')->group(function () {
     Route::get('/{user}', [UserController::class, 'ShowCity']);
 });
 
+Route::get('/city', [CityController::class, 'show']);
 
 Route::get('/test', [UserController::class, 'TestView']);
 
