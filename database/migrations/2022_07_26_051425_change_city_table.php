@@ -15,6 +15,7 @@ return new class extends Migration
     {
         schema::table('cities', function (Blueprint $table) {
             $table->string('country_id');
+            $table->integer('population');  
         });
     }
 
