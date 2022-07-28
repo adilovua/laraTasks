@@ -9,14 +9,21 @@ use App\Models\country;
 class CityController extends Controller
 {
    public function show(){
-        $Cities = Country::find(1)
-            ->cities()
-            ->where('population','>', 2500000)
-            ->get();
+       $getCountries = Country::all();
+       $Cities=array();
+        foreach ($getCountries as $Country) {
+
+            $Cities[$Country->name] = $Country
+                                        ->cities()
+                                        ->orderBy('population')
+                                        ->get();
+        }
+
         return view('myviews.CitiesInCountry',
         [
-        'title' => 'Cities',
-        'Cities' => $Cities
+          'title' => 'Cities',
+          'Countries' => $getCountries,
+          'Cities' => $Cities
         ]);
    }
 
