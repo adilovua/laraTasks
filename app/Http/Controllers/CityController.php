@@ -9,7 +9,9 @@ use App\Models\country;
 class CityController extends Controller
 {
    public function show(){
-       $getCountries = Country::all();
+       $getCities = City::find(1);
+       dd($getCities->whatCountry()->get());
+
        $Cities=array();
         foreach ($getCountries as $Country) {
 
