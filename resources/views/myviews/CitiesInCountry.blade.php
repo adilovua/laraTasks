@@ -3,15 +3,10 @@
         {{ $title }}
     </x-slot>
 
-    @foreach ($Countries as $Country)
-             <p>
-                {{ $Country->name }}
+    @foreach($Cities as $City)
+            <p>
+                {{ $City->city }}
             </p>
-            @foreach($Cities[$Country->name] as $city)
-                <p>
-                    {{$city->city}}
-                </p>
-            @endforeach
     @endforeach
 
 </x-layout>
