@@ -24,7 +24,7 @@ class PostController extends Controller
     public function result(Request $request)
     {
         $res = $request->number_1+$request->number_2+$request->number_13;
-        
+
         return view('myviews.result',
         [
             'title'=>'result',
