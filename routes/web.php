@@ -47,4 +47,7 @@ Route::get('/user/{id}/{name}', function ($id, $name){
 
 Route::get('/post/', [PostController::class, 'show']);
 
+Route::get('/form', [PostController::class, 'form']);
+
+Route::get('/result', [PostController::class, 'result']);
 

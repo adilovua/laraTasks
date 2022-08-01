@@ -9,7 +9,7 @@ use App\Models\Profile;
 
 class UserController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
         $users=User::find(1);
         dump($users);
