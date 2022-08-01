@@ -20,6 +20,10 @@ class PostController extends Controller
     {
         return view('myviews.form', ['title'=>'Form']);
     }
+    public function form1()
+    {
+        return view('myviews.form-1', ['title'=>'Form-1']);
+    }
 
     public function result(Request $request)
     {
@@ -30,5 +34,19 @@ class PostController extends Controller
             'title'=>'result',
             'result' => $res
         ]);
+    }
+
+    public function result1(Request $request)
+    {
+        $Name = $request->name;
+        $age = $request->age;
+        $salary = $request->salary;
+        return view('myviews.result-1',
+            [
+                'title'=>'result-1',
+                'name' => $Name,
+                'age' => $age,
+                'salary' => $salary
+            ]);
     }
 }

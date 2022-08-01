@@ -48,6 +48,8 @@ Route::get('/user/{id}/{name}', function ($id, $name){
 Route::get('/post/', [PostController::class, 'show']);
 
 Route::get('/form', [PostController::class, 'form']);
-
 Route::get('/result', [PostController::class, 'result']);
+
+Route::get('/form-1', [PostController::class, 'form1']);
+Route::post('/result-1', [PostController::class, 'result1']);
 
