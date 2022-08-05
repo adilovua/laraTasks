@@ -53,3 +53,9 @@ Route::get('/result', [PostController::class, 'result']);
 Route::get('/form-1', [PostController::class, 'form1']);
 Route::post('/result-1', [PostController::class, 'result1']);
 
+Route::get('/components', function(){
+    return view('myviews.show', [
+        'title' => 'Working on Components'
+    ]);
+});
+
