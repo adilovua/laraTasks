@@ -7,4 +7,5 @@
         </div>
         <x-main.menu/>
     </div>
+    <p>{{$var1}} {{$var2}}</p>
 </header>
